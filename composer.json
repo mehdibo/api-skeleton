@@ -1,4 +1,6 @@
 {
+    "name": "mehdibo/api-skeleton",
+    "description": "This is a skeleton to create an API with Symfony",
     "type": "project",
     "license": "proprietary",
     "require": {
