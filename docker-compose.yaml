@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  php:
+    build: .docker/php
+    volumes:
+    - ./:/var/api
+
+  web:
+    build: .docker/web
+    ports:
+    - 8080:80
+    volumes:
+      - ./.docker/web/default.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/var/api/public
+    depends_on:
+      - php
+
+  redis:
+    image: "redis:alpine"
