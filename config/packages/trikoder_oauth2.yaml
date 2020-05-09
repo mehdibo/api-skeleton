@@ -1,10 +1,10 @@
 trikoder_oauth2:
     authorization_server:
-        private_key: '%env(string:OAUTH2_PRIVATE_KEY)%'
+        private_key: '%env(resolve:OAUTH2_PRIVATE_KEY)%'
         private_key_passphrase: '%env(string:OAUTH2_KEY_PASSPHRASE)%'
         encryption_key: '%env(string:OAUTH2_ENCRYPTION_KEY)%'
     resource_server:
-        public_key: '%env(string:OAUTH2_PUBLIC_KEY)%'
+        public_key: '%env(resolve:OAUTH2_PUBLIC_KEY)%'
     persistence:
         doctrine: null
     # Define your scopes here
