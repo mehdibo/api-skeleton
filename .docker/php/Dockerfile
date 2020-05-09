@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y git zip libicu-dev vim \
     && mkdir -p /home/www-data && docker-php-ext-install pdo_mysql \
     && usermod -d /home/www-data www-data
 
-RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
     && sed -i 's/expose_php = On/expose_php = Off/g' "$PHP_INI_DIR/php.ini" \
     && echo "$(curl -sS https://composer.github.io/installer.sig) -" > composer-setup.php.sig \
     && curl -sS https://getcomposer.org/installer | tee composer-setup.php | sha384sum -c composer-setup.php.sig \
