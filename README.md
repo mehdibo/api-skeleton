@@ -20,4 +20,11 @@ And then on your .env file change `OAUTH2_PUBLIC_KEY` and `OAUTH2_PRIVATE_KEY` w
 ### Configure encryption key
 
 Follow [this guide](https://oauth2.thephpleague.com/installation/#string-password) to generate an encryption key
-and and set it to `OAUTH2_ENCRYPTION_KEY` in your .env file 
+and set it to `OAUTH2_ENCRYPTION_KEY` in your .env file 
+
+## Database
+
+This repo comes configured with MySQL in `docker-compose`, it is filled with default values to work
+in the development environment.
+
+**But you have to override them when deploying to production with more secure values** using the `-e` flag
