@@ -22,13 +22,13 @@ security:
         login:
             anonymous: lazy
             provider: app_user_provider
+            logout:
+                path: auth_logout
+                csrf_parameter: token
+                csrf_token_generator: security.csrf.token_manager
             guard:
                 authenticators:
                     - App\Security\LoginAuthenticator
-            logout:
-                path: oauth2_logout
-                csrf_parameter: token
-                csrf_token_generator: security.csrf.token_manager
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
