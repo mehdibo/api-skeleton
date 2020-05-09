@@ -5,10 +5,10 @@ maba_gentle_force:
     global:
       - max_usages: 10
         period: 1m
-    listeners:
-      - path: ^/
-        limits_key: global
-        identifiers: [ip]
-      - path: ^/
-        limits_key: global
-        identifiers: [username]
+  listeners:
+    - path: ^/
+      limits_key: global
+      identifiers: [ip]
+    - path: ^/
+      limits_key: global
+      identifiers: [username]
