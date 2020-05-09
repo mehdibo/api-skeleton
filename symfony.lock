@@ -41,6 +41,19 @@
             "src/Repository/.gitignore"
         ]
     },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "src/Migrations/.gitignore"
+        ]
+    },
     "doctrine/event-manager": {
         "version": "1.1.0"
     },
@@ -53,6 +66,9 @@
     "doctrine/lexer": {
         "version": "1.2.0"
     },
+    "doctrine/migrations": {
+        "version": "2.2.1"
+    },
     "doctrine/orm": {
         "version": "v2.7.2"
     },
@@ -64,6 +80,15 @@
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "laminas/laminas-code": {
+        "version": "3.4.1"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.2.1"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.0.3"
     },
     "lcobucci/jwt": {
         "version": "3.3.1"
@@ -86,6 +111,9 @@
     "monolog/monolog": {
         "version": "2.0.2"
     },
+    "nikic/php-parser": {
+        "version": "v4.4.0"
+    },
     "nyholm/psr7": {
         "version": "1.0",
         "recipe": {
@@ -100,6 +128,9 @@
     },
     "ocramius/package-versions": {
         "version": "1.8.0"
+    },
+    "ocramius/proxy-manager": {
+        "version": "2.8.0"
     },
     "php": {
         "version": "7.4"
@@ -230,6 +261,15 @@
     "symfony/inflector": {
         "version": "v5.0.8"
     },
+    "symfony/maker-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
     "symfony/mime": {
         "version": "v5.0.8"
     },
@@ -249,6 +289,9 @@
             "config/packages/prod/monolog.yaml",
             "config/packages/test/monolog.yaml"
         ]
+    },
+    "symfony/orm-pack": {
+        "version": "v1.0.8"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.16.0"
@@ -306,6 +349,9 @@
     "symfony/service-contracts": {
         "version": "v2.0.1"
     },
+    "symfony/stopwatch": {
+        "version": "v5.0.8"
+    },
     "symfony/var-dumper": {
         "version": "v5.0.8"
     },
@@ -327,5 +373,8 @@
             "config/packages/trikoder_oauth2.yaml",
             "config/routes/trikoder_oauth2.yaml"
         ]
+    },
+    "webimpress/safe-writer": {
+        "version": "2.0.1"
     }
 }
