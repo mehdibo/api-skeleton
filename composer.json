@@ -8,13 +8,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "maba/gentle-force-bundle": "^0.6.1",
+        "nyholm/psr7": "^1.2",
         "symfony-bundles/json-request-bundle": "^3.0",
         "symfony/console": "5.0.*",
         "symfony/dotenv": "5.0.*",
         "symfony/flex": "^1.3.1",
         "symfony/framework-bundle": "5.0.*",
         "symfony/monolog-bundle": "^3.5",
-        "symfony/yaml": "5.0.*"
+        "symfony/yaml": "5.0.*",
+        "trikoder/oauth2-bundle": "^3.1"
     },
     "require-dev": {
     },
