@@ -1,0 +1,23 @@
+# Symfony API skeleton
+
+This is a skeleton to help you start making an API using Symfony.
+
+It contains oAuth2 and Rate limit, also some tools and helpers to get you started quickly.
+
+# Setup
+
+Follow these steps to get up and running
+
+## oAuth2
+
+### Configure public and private keys
+
+You can follow [this guide](https://oauth2.thephpleague.com/installation/#generating-public-and-private-keys)
+to generate a pair of keys.
+
+And then on your .env file change `OAUTH2_PUBLIC_KEY` and `OAUTH2_PRIVATE_KEY` with your keys paths.
+
+### Configure encryption key
+
+Follow [this guide](https://oauth2.thephpleague.com/installation/#string-password) to generate an encryption key
+and and set it to `OAUTH2_ENCRYPTION_KEY` in your .env file 
