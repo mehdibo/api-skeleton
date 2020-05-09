@@ -4,8 +4,237 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f3ff561d3b95e653296d5231986d1db",
+    "content-hash": "70c2e0e2d9855495cda18adeb675ca93",
     "packages": [
+        {
+            "name": "maba/dependency-injection-extra",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mariusbalcytis/dependency-injection-extra.git",
+                "reference": "16c9604f41e029abeb9f4e6dca62be3b5e515bf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mariusbalcytis/dependency-injection-extra/zipball/16c9604f41e029abeb9f4e6dca62be3b5e515bf3",
+                "reference": "16c9604f41e029abeb9f4e6dca62be3b5e515bf3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "symfony/dependency-injection": "^2.3|^3.0|^4.0|^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36",
+                "satooshi/php-coveralls": "^0.6.1",
+                "sebastian/comparator": "^1.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maba\\Component\\DependencyInjection\\": "src",
+                    "Maba\\Component\\DependencyInjection\\Tests\\": "test"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Balčytis",
+                    "email": "marius.balcytis@gmail.com"
+                }
+            ],
+            "keywords": [
+                "compiler pass",
+                "dependency injection",
+                "di"
+            ],
+            "time": "2020-02-02T16:34:37+00:00"
+        },
+        {
+            "name": "maba/gentle-force",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mariusbalcytis/gentle-force.git",
+                "reference": "a6e0402b4ce3ba53f0b20c9f6cb4d892cd96e297"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mariusbalcytis/gentle-force/zipball/a6e0402b4ce3ba53f0b20c9f6cb4d892cd96e297",
+                "reference": "a6e0402b4ce3ba53f0b20c9f6cb4d892cd96e297",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 | ^7.0",
+                "predis/predis": "^1.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.2",
+                "misterion/ko-process": "^0.5.3",
+                "phpunit/phpunit": "^4.8.35",
+                "symfony/stopwatch": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maba\\GentleForce\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Balčytis",
+                    "email": "marius.balcytis@gmail.com"
+                }
+            ],
+            "description": "Library for limiting both brute-force attempts and ordinary requests, using leaky/token bucket algorithm, based on Redis",
+            "keywords": [
+                "DOS protection",
+                "brute force protection",
+                "brute-force",
+                "bruteforce",
+                "leaky bucket",
+                "rate limit",
+                "rate limiter",
+                "rate limiting",
+                "security",
+                "threshold",
+                "throttle",
+                "token bucket"
+            ],
+            "time": "2018-12-18T12:38:01+00:00"
+        },
+        {
+            "name": "maba/gentle-force-bundle",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mariusbalcytis/gentle-force-bundle.git",
+                "reference": "512856af5b5d5f41e4be5a487f9060f3b54fc52f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mariusbalcytis/gentle-force-bundle/zipball/512856af5b5d5f41e4be5a487f9060f3b54fc52f",
+                "reference": "512856af5b5d5f41e4be5a487f9060f3b54fc52f",
+                "shasum": ""
+            },
+            "require": {
+                "maba/dependency-injection-extra": "^0.1.1|^1.0",
+                "maba/gentle-force": "^0.2.1|^0.3",
+                "php": "^7.0",
+                "psr/log": "^1.0",
+                "symfony/framework-bundle": "^4.3|^5.0"
+            },
+            "require-dev": {
+                "doctrine/cache": "^1.6",
+                "friendsofphp/php-cs-fixer": "^2.2",
+                "google/recaptcha": "~1.1.3",
+                "phpunit/phpunit": "6.5|^7.5|^8.5",
+                "sebastian/comparator": "^2.1|^3.0.2",
+                "symfony/asset": "^4.3|^5.0",
+                "symfony/dependency-injection": ">=2.7.1",
+                "symfony/error-handler": "^4.3|^5.0",
+                "symfony/security-bundle": "^4.3|^5.0",
+                "symfony/templating": "^4.3|^5.0",
+                "symfony/twig-bundle": "^4.3|^5.0",
+                "symfony/yaml": "^4.3|^5.0"
+            },
+            "suggest": {
+                "google/recaptcha": "Needed to use 'recaptcha_headers' or 'recaptcha_template' strategy",
+                "symfony/monolog-bundle": "Needed to use 'log' strategy, log connection failures and blocked requests",
+                "symfony/security-bundle": "Needed to use 'username' identifier",
+                "symfony/twig-bundle": "Needed to use 'recaptcha_template' strategy"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Maba\\Bundle\\GentleForceBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Balčytis",
+                    "email": "marius.balcytis@gmail.com"
+                }
+            ],
+            "description": "Symfony bundle that integrates gentle-force library for limiting both brute-force attempts and ordinary requests, using leaky/token bucket algorithm, based on Redis",
+            "keywords": [
+                "DOS protection",
+                "Symfony Bundle",
+                "brute force protection",
+                "brute-force",
+                "bruteforce",
+                "leaky bucket",
+                "rate limit",
+                "rate limiter",
+                "rate limiting",
+                "security",
+                "threshold",
+                "throttle",
+                "token bucket"
+            ],
+            "time": "2020-04-30T04:44:31+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
+        },
         {
             "name": "psr/cache",
             "version": "1.0.1",

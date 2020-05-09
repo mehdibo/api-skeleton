@@ -1,0 +1,3 @@
+maba_gentle_force:
+  redis:
+    host: 'redis:6379'
