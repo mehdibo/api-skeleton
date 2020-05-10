@@ -1,0 +1,11 @@
+parameters:
+  level: 6
+  paths:
+    - tests
+    - src
+  autoload_files:
+    - vendor/bin/.phpunit/phpunit-7.5-0/vendor/autoload.php
+  excludes_analyse:
+    - tests/bootstrap.php
+    - src/Migrations/*
+    - src/Kernel.php
