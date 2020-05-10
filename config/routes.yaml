@@ -1,3 +1,18 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+#api:
+#  resource: '../src/Controller/Api'
+#  type: annotation
+#  # this is added to the beginning of all imported route URLs
+#  prefix: '/api'
+
+auth:
+  resource: '../src/Controller/Auth'
+  type: annotation
+  # this is added to the beginning of all imported route URLs
+  prefix: '/auth'
+
+oauth2:
+  resource: '@TrikoderOAuth2Bundle/Resources/config/routes.xml'

@@ -5,6 +5,9 @@ services:
     build: .docker/php
     volumes:
     - ./:/var/api
+    depends_on:
+      - db
+      - redis
 
   web:
     build: .docker/web
@@ -15,6 +18,16 @@ services:
       - ./public:/var/api/public
     depends_on:
       - php
+
+  db:
+    image: mysql
+    # These should not be used in production
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: api
+      MYSQL_USER: api
+      MYSQL_PASSWORD: secret
+
 
   redis:
     image: "redis:alpine"
