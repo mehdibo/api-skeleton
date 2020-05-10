@@ -53,6 +53,9 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
             && $request->isMethod('POST');
     }
 
+    /**
+     * @return string[]
+     */
     public function getCredentials(Request $request):array
     {
         $credentials = [
@@ -76,7 +79,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
         }
 
         /**
-         * @var User $user
+         * @var User|null $user
          */
         $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
 
@@ -95,7 +98,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
-     * @param array $credentials
+     * @param string[] $credentials
      * @return string|null
      */
     public function getPassword($credentials): ?string
