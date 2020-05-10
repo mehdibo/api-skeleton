@@ -25,7 +25,7 @@ jobs:
         run: composer install --no-progress --no-suggest --no-interaction
 
       - name: Install PHPUnit
-        run: ./vendor/bin/simple-phpunit --filter nonExistingTestToTriggerPHPUnitInstall
+        run: docker-compose exec -T --user user php php vendor/bin/simple-phpunit --filter nonExistingTestToTriggerPHPUnitInstall
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse -c phpstan.neon --no-progress -n
