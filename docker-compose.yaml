@@ -21,8 +21,6 @@ services:
 
   db:
     image: mysql
-    volumes:
-      - ./.docker/db/env-secrets:/var/secrets/mysql-secrets
     # These should not be used in production
     environment:
       MYSQL_ROOT_PASSWORD: root
