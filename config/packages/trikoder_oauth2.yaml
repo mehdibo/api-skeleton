@@ -10,4 +10,5 @@ trikoder_oauth2:
         doctrine: null
     # Define your scopes here
     scopes:
+        - 'testing' # This scope is used for testing access to routes
         - 'profile:read'
