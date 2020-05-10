@@ -16,9 +16,8 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
     public const NORMAL_USER_REFERENCE = 'normal-user';
 
     public const DEFINED_USERS = [
-        [
+        self::NORMAL_USER_REFERENCE => [
             'email' => 'normal@dev',
-            'user-ref' => self::NORMAL_USER_REFERENCE,
         ],
     ];
 
@@ -31,13 +30,13 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
 
     public function load(ObjectManager $manager):void
     {
-        foreach (self::DEFINED_USERS as $definedUser)
+        foreach (self::DEFINED_USERS as $ref => $definedUser)
         {
             $user = new User();
             $user->setEmail($definedUser['email'])
                 ->setPassword($this->passwordEncoder->encodePassword($user, $definedUser['email']));
             $manager->persist($user);
-            $this->addReference($definedUser['user-ref'], $user);
+            $this->addReference($ref, $user);
         }
         $faker = Factory::create();
         for ($i = count(self::DEFINED_USERS); $i < self::TOTAL_COUNT; $i++)
