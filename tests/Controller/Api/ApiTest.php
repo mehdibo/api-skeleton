@@ -61,4 +61,13 @@ abstract class ApiTest extends WebTestCase
         return $this->client->getContainer()->get('doctrine');
     }
 
+    protected function assertObjectOnlyHasAttributes(array $attributes, \stdClass $obj):void
+    {
+        foreach ($attributes as $attribute)
+            $this->assertObjectHasAttribute($attribute, $obj);
+        $properties = get_object_vars($obj);
+        foreach ($properties as $key => $value)
+            $this->assertContains($key, $attributes, "Object shouldn't contain '$key' attribute");
+    }
+
 }
