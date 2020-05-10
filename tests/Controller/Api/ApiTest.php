@@ -22,7 +22,7 @@ abstract class ApiTest extends WebTestCase
 
     /**
      * @param string $email
-     * @param array $scopes
+     * @param string[] $scopes
      * @throws \Exception
      */
     public function authenticateAs(string $email, array $scopes):void
@@ -64,6 +64,10 @@ abstract class ApiTest extends WebTestCase
         return $this->client->getContainer()->get('doctrine');
     }
 
+    /**
+     * @param string[] $attributes
+     * @param \stdClass $obj
+     */
     protected function assertObjectOnlyHasAttributes(array $attributes, \stdClass $obj):void
     {
         foreach ($attributes as $attribute)

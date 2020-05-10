@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 abstract class ProtectedRouteTest extends ApiTest
 {
 
+    /**
+     * @return string[]
+     */
     abstract protected function getRequiredScopes():array;
     abstract protected function getAllowedUserEmail():string;
     abstract protected function getNotAllowedUserEmail():?string;
@@ -47,7 +50,7 @@ abstract class ProtectedRouteTest extends ApiTest
         $this->assertEquals(Response::HTTP_FORBIDDEN, $this->client->getResponse()->getStatusCode());
     }
 
-    public function testCanViewRouteWithRequiredRoleAndScopes()
+    public function testCanViewRouteWithRequiredRoleAndScopes():void
     {
         $this->authenticateAs($this->getAllowedUserEmail(), $this->getRequiredScopes());
         $this->client->request(
