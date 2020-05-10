@@ -17,7 +17,7 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
 
     public const DEFINED_USERS = [
         [
-            'email' => 'mehdi@spoody.me',
+            'email' => 'normal@dev',
             'user-ref' => self::NORMAL_USER_REFERENCE,
         ],
     ];
