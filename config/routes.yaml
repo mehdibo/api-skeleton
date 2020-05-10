@@ -13,6 +13,3 @@ auth:
   type: annotation
   # this is added to the beginning of all imported route URLs
   prefix: '/auth'
-
-oauth2:
-  resource: '@TrikoderOAuth2Bundle/Resources/config/routes.xml'
