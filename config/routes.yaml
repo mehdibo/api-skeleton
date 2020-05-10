@@ -13,3 +13,9 @@ auth:
   type: annotation
   # this is added to the beginning of all imported route URLs
   prefix: '/auth'
+
+api:
+  resource: '../src/Controller/Api'
+  type: annotation
+  # this is added to the beginning of all imported route URLs
+  prefix: '/api'
