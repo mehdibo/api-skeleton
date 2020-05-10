@@ -4,13 +4,11 @@
 namespace App\Tests\Controller\Api;
 
 
-use App\Entity\User;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ApiTest extends WebTestCase
+abstract class ApiTest extends WebTestCase
 {
     protected ?KernelBrowser $client = NULL;
 
