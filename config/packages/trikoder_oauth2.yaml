@@ -1,5 +1,6 @@
 trikoder_oauth2:
     authorization_server:
+        enable_password_grant: true
         private_key: '%env(resolve:OAUTH2_PRIVATE_KEY)%'
         private_key_passphrase: '%env(string:OAUTH2_KEY_PASSPHRASE)%'
         encryption_key: '%env(string:OAUTH2_ENCRYPTION_KEY)%'
@@ -9,4 +10,5 @@ trikoder_oauth2:
         doctrine: null
     # Define your scopes here
     scopes:
+        - 'testing' # This scope is used for testing access to routes
         - 'profile:read'

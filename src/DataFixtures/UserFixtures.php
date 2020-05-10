@@ -13,6 +13,14 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
 {
     public const TOTAL_COUNT = 40;
 
+    public const NORMAL_USER_REFERENCE = 'normal-user';
+
+    public const DEFINED_USERS = [
+        self::NORMAL_USER_REFERENCE => [
+            'email' => 'normal@dev',
+        ],
+    ];
+
     private UserPasswordEncoderInterface $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -22,8 +30,16 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
 
     public function load(ObjectManager $manager):void
     {
+        foreach (self::DEFINED_USERS as $ref => $definedUser)
+        {
+            $user = new User();
+            $user->setEmail($definedUser['email'])
+                ->setPassword($this->passwordEncoder->encodePassword($user, $definedUser['email']));
+            $manager->persist($user);
+            $this->addReference($ref, $user);
+        }
         $faker = Factory::create();
-        for ($i = 0; $i < self::TOTAL_COUNT; $i++)
+        for ($i = count(self::DEFINED_USERS); $i < self::TOTAL_COUNT; $i++)
         {
             $email = $faker->email;
             $user = new User();

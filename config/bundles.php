@@ -2,7 +2,7 @@
 
 return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
-    Maba\Bundle\GentleForceBundle\MabaGentleForceBundle::class => ['all' => true],
+    Maba\Bundle\GentleForceBundle\MabaGentleForceBundle::class => ['prod' => true],
     SymfonyBundles\JsonRequestBundle\SymfonyBundlesJsonRequestBundle::class => ['all' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
