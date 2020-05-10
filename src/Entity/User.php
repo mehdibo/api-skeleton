@@ -50,7 +50,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private \DateTimeInterface $last_login;
+    private ?\DateTimeInterface $last_login;
 
     /**
      * @ORM\Column(type="datetime")
