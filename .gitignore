@@ -89,3 +89,9 @@ composer.phar
 /web/js/
 
 # End of https://www.gitignore.io/api/symfony,phpunit,composer
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
