@@ -1,4 +1,4 @@
-# Symfony API skeleton
+# Symfony API skeleton ![Tests CI](https://github.com/mehdibo/api-skeleton/workflows/Tests%20CI/badge.svg) ![Run PHPStan](https://github.com/mehdibo/api-skeleton/workflows/Run%20PHPStan/badge.svg) ![Docker Image CI](https://github.com/mehdibo/api-skeleton/workflows/Docker%20Image%20CI/badge.svg)
 
 This is a skeleton to help you start making an API using Symfony.
 
