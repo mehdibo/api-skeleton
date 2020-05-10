@@ -17,6 +17,9 @@ abstract class ApiTest extends WebTestCase
         $this->client = self::createClient();
     }
 
+    abstract protected function getEndpoint():string;
+    abstract protected function getMethod():string;
+
     /**
      * @param string $email
      * @param array $scopes
@@ -29,12 +32,12 @@ abstract class ApiTest extends WebTestCase
             'username' => $email,
             'password' => $email,
             'scope' => implode(' ', $scopes),
-            'client_id' => 'test_client_id',
-            'client_secret' => 'test_client_secret',
+            'client_id' => 'client_id',
+            'client_secret' => 'client_secret',
         ];
         $this->client->request(
             'POST',
-            '/oauth2/token',
+            '/auth/token',
             [],
             [],
             ['CONTENT_TYPE' => 'application/json'],
