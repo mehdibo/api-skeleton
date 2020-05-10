@@ -24,8 +24,11 @@ jobs:
     - name: Generate oAuth keys
       run: |
         docker-compose exec -T --user user php mkdir -p var/keys
-        docker-compose exec -T --user user php openssl genrsa -passout pass:'pick_a_really_strong_passphrase' -out private.key 2048
-        docker-compose exec -T --user user php openssl rsa -in private.key -passin pass:'pick_a_really_strong_passphrase' -pubout -out public.key
+        docker-compose exec -T --user user php openssl genrsa -passout pass:'pick_a_really_strong_passphrase' -out var/keys/private.key 2048
+        docker-compose exec -T --user user php openssl rsa -in private.key -passin pass:'pick_a_really_strong_passphrase' -pubout -out var/keys/public.key
+        docker-compose exec -T --user user php chmod 644 var/keys/private.key var/keys/public.key
+        docker-compose exec -T --user user php pwd
+        docker-compose exec -T --user user php ls -l
     - name: Prepare database
       run: |
         docker-compose exec -T --user user php php bin/console doctrine:migrations:migrate -n
