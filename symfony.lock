@@ -168,6 +168,9 @@
     "php-http/message-factory": {
         "version": "v1.0.2"
     },
+    "phpstan/phpstan": {
+        "version": "0.12.23"
+    },
     "predis/predis": {
         "version": "v1.1.1"
     },
