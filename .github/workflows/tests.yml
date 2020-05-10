@@ -19,6 +19,8 @@ jobs:
       run: composer validate
     - name: Check requirements
       run: docker-compose exec -T --user user php composer check-platform-reqs
+    - name: Install dependencies
+      run: docker-compose exec -T --user user php composer install --no-progress --no-suggest --no-interaction
     - name: Generate oAuth keys
       run: |
         docker-compose exec -T --user user php mkdir -p var/keys
