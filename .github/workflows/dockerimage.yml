@@ -7,14 +7,12 @@ on:
     branches: [ master, develop ]
 
 jobs:
-
-  test:
+  build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker images
       run: docker-compose build --build-arg USER_ID="$(id -u)" --build-arg GROUP_ID="$(id -g)"
-    - name: Start the Docker container
+    - name: Start the Docker containers
       run: docker-compose up -d
       
