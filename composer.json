@@ -17,6 +17,7 @@
         "symfony/monolog-bundle": "^3.5",
         "symfony/orm-pack": "^1.0",
         "symfony/security-bundle": "5.0.*",
+        "symfony/serializer": "5.0.*",
         "symfony/twig-pack": "^1.0",
         "symfony/yaml": "5.0.*",
         "trikoder/oauth2-bundle": "^3.1"
