@@ -23,6 +23,7 @@
     },
     "require-dev": {
         "symfony/browser-kit": "5.0.*",
+        "symfony/css-selector": "5.0.*",
         "symfony/maker-bundle": "^1.17",
         "symfony/phpunit-bridge": "^5.0"
     },
