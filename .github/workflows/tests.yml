@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/cache@v1
+      with:
+        path: vendor/
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
     - name: Build the Docker images
       run: docker-compose build --build-arg USER_ID="$(id -u)" --build-arg GROUP_ID="$(id -g)"
     - name: Start the Docker containers
