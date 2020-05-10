@@ -20,7 +20,7 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
         $this->passwordEncoder = $passwordEncoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager):void
     {
         $faker = Factory::create();
         for ($i = 0; $i < self::TOTAL_COUNT; $i++)

@@ -33,6 +33,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="json")
+     * @var string[]
      */
     private array $roles = [];
 
@@ -44,6 +45,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="json")
+     * @var mixed[]
      */
     private array $settings = [];
 
@@ -92,6 +94,7 @@ class User implements UserInterface
 
     /**
      * @see UserInterface
+     * @return string[]
      */
     public function getRoles(): array
     {
@@ -102,6 +105,9 @@ class User implements UserInterface
         return array_unique($roles);
     }
 
+    /**
+     * @param string[] $roles
+     */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
@@ -127,25 +133,32 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getSalt()
+    public function getSalt():?string
     {
         // not needed when using the "bcrypt" algorithm in security.yaml
+        return NULL;
     }
 
     /**
      * @see UserInterface
      */
-    public function eraseCredentials()
+    public function eraseCredentials():void
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
 
-    public function getSettings(): ?array
+    /**
+     * @return mixed[] $settings
+     */
+    public function getSettings(): array
     {
         return array_merge(self::DEFAULT_SETTINGS, $this->settings);
     }
 
+    /**
+     * @param mixed[] $settings
+     */
     public function setSettings(array $settings): self
     {
         $this->settings = $settings;
