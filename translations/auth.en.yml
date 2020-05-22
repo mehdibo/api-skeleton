@@ -1,0 +1,7 @@
+email: 'Email'
+password: 'Password'
+login:
+  title: 'Log in!'
+  action: 'Sign in'
+  errors:
+    invalid_credentials: 'The credentials you entered are invalid'
