@@ -67,11 +67,11 @@
             <label for="inputPassword" class="sr-only">{% trans from 'auth' %}password{% endtrans %}</label>
             <input type="password" name="password" id="inputPassword" class="form-control" placeholder="{% trans from 'auth' %}password{% endtrans %}" required>
 
-{#            <div class="checkbox mb-3">#}
-{#                <label>#}
-{#                    <input type="checkbox" name="_remember_me"> {% trans from 'auth' %}login.remember_me{% endtrans %}#}
-{#                </label>#}
-{#            </div>#}
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> {% trans from 'auth' %}login.remember_me{% endtrans %}
+                </label>
+            </div>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
 

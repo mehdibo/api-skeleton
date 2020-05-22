@@ -20,6 +20,9 @@ security:
             stateless: true
             oauth2: true
         login:
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 259200 # 3 days
             anonymous: lazy
             provider: app_user_provider
             logout:
