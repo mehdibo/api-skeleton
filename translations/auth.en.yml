@@ -1,5 +1,8 @@
 email: 'Email'
 password: 'Password'
+common:
+  errors:
+    invalid_csrf: 'Something went wrong, try again please. #csrf_invalid'
 login:
   title: 'Log in!'
   heading: 'Please sign in'
@@ -7,4 +10,10 @@ login:
   remember_me: 'Remember me'
   errors:
     invalid_credentials: 'The credentials you entered are invalid'
-    invalid_csrf: 'Something went wrong, try again please. #csrf_invalid'
+grant:
+  title: 'Authorize application'
+  heading: 'The application requests these permissions:'
+  accept: 'Grant access'
+  deny: 'Deny access'
+  scopes:
+    profile_read: 'Read your profile data'
