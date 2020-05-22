@@ -2,6 +2,8 @@ email: 'Email'
 password: 'Password'
 login:
   title: 'Log in!'
+  heading: 'Please sign in'
   action: 'Sign in'
+  remember_me: 'Remember me'
   errors:
     invalid_credentials: 'The credentials you entered are invalid'
