@@ -7,6 +7,7 @@
         "php": "^7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/annotations": "^1.10",
         "maba/gentle-force-bundle": "^0.6.1",
         "nyholm/psr7": "^1.2",
         "symfony-bundles/json-request-bundle": "^3.0",
@@ -20,6 +21,7 @@
         "symfony/serializer": "5.0.*",
         "symfony/translation": "5.0.*",
         "symfony/twig-pack": "^1.0",
+        "symfony/validator": "5.0.*",
         "symfony/yaml": "5.0.*",
         "trikoder/oauth2-bundle": "^3.1"
     },
