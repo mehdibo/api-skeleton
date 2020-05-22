@@ -2,8 +2,8 @@ FROM php:7.4-fpm
 
 ARG USER_ID
 ARG GROUP_ID
-RUN addgroup --gid $GROUP_ID user
-RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+COPY ./create_user.sh /opt/create_user.sh
+RUN /opt/create_user.sh
 
 RUN apt-get update && apt-get install -y git zip libicu-dev vim \
     && docker-php-ext-install intl && docker-php-ext-enable opcache \
