@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% trans from 'auth' %}grant.title{% endtrans %}
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .grant-form {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <form method="GET" class="grant-form">
+
+        <div class="card text-center">
+            <div class="card-header">
+                {% trans from 'auth' %}grant.heading{% endtrans %}
+            </div>
+            <div class="card-body">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error|trans({}, 'auth') }}</div>
+                {% endif %}
+                <ul class="list-group">
+                    {% for scope_description in scopes %}
+                        <li class="list-group-item">{{ scope_description|trans({}, 'auth') }}</li>
+                    {% endfor %}
+                </ul>
+                <button class="btn btn-sm btn-danger mt-2 float-left" type="submit" name="grant" value="deny">
+                    {% trans from 'auth' %}grant.deny{% endtrans %}
+                </button>
+                <button class="btn btn-sm btn-success mt-2 float-right" type="submit" name="grant" value="accept">
+                    {% trans from 'auth' %}grant.accept{% endtrans %}
+                </button>
+            </div>
+        </div>
+
+        {% for field_name,value in hidden_fields %}
+            <input type="hidden" name="{{ field_name }}" value="{{ value }}" >
+        {% endfor%}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('grant') }}" >
+    </form>
+{% endblock %}
