@@ -62,10 +62,10 @@
             {% endif %}
 
             <label for="inputEmail" class="sr-only">{% trans from 'auth' %}email{% endtrans %}</label>
-            <input type="email" value="{{ last_username }}" id="inputEmail" class="form-control" placeholder="{% trans from 'auth' %}email{% endtrans %}" required autofocus>
+            <input type="email" name="email" value="{{ last_username }}" id="inputEmail" class="form-control" placeholder="{% trans from 'auth' %}email{% endtrans %}" required autofocus>
 
             <label for="inputPassword" class="sr-only">{% trans from 'auth' %}password{% endtrans %}</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="{% trans from 'auth' %}password{% endtrans %}" required>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="{% trans from 'auth' %}password{% endtrans %}" required>
 
 {#            <div class="checkbox mb-3">#}
 {#                <label>#}
