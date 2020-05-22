@@ -5,12 +5,17 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User implements UserInterface
 {
+
+    public const ROLES = [
+        'ROLE_USER',
+    ];
 
     /**
      * They will be loaded if the user did not set the settings in this array
@@ -28,11 +33,17 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Email()
+     * @Assert\NotBlank()
      */
     private string $email;
 
     /**
      * @ORM\Column(type="json")
+     * @Assert\All({
+     *      @Assert\NotBlank(),
+     *      @Assert\Choice(choices=User::ROLES, message="Choose a valid role.")
+     * })
      * @var string[]
      */
     private array $roles = [];
