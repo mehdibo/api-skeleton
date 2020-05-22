@@ -71,6 +71,7 @@ final class AuthRequestResolve
             'response_type',
             'response_mode',
             'nonce',
+            'state',
         ];
         $data = [
             'error' => $error,
