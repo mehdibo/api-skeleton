@@ -7,3 +7,4 @@ login:
   remember_me: 'Remember me'
   errors:
     invalid_credentials: 'The credentials you entered are invalid'
+    invalid_csrf: 'Something went wrong, try again please. #csrf_invalid'
